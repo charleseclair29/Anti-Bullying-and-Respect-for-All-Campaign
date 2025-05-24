@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stand Tall, Respect for All</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0077b6;
+      --secondary: #00b4d8;
+      --accent: #90e0ef;
+      --background: #caf0f8;
+      --text-dark: #03045e;
+      --text-light: #fff;
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--background);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: var(--primary);
+      padding: 1rem 2rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: slideDown 0.7s ease forwards;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    .logo {
+      height: 50px;
+      width: 50px;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      user-select: none;
+    }
+    nav {
+      background: var(--secondary);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      box-shadow: inset 0 -3px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 70px;
+      z-index: 900;
+    }
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+    nav a:hover, nav a.active {
+      background-color: var(--accent);
+      color: var(--primary);
+      box-shadow: 0 0 8px var(--accent);
+    }
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      position: relative;
+      min-height: 60vh;
+    }
+    section {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      min-height: 60vh;
+    }
+    section.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+      position: relative;
+    }
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    p, ul {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+    a.external-link {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+    a.external-link:hover {
+      color: var(--primary);
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      user-select: none;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Stop_sign.svg/800px-Stop_sign.svg.png" alt="Campaign Logo" class="logo" />
+  <h1>Stand Tall, Respect for All</h1>
+</header>
+
+<nav>
+  <a href="#" class="active" data-target="home">Home</a>
+  <a href="#" data-target="issue">About the Issue</a>
+  <a href="#" data-target="video">Our Campaign Video</a>
+  <a href="#" data-target="help">Help & Resources</a>
+  <a href="#" data-target="team">About the Team</a>
+</nav>
+
+<main>
+  <section id="home" class="active">
+    <h2>Welcome</h2>
+    <p>Welcome to our campaign! We promote respect, kindness, and a safe environment for everyone. Let's stand together to end bullying and build a culture of inclusion and empathy.</p>
+  </section>
+
+  <section id="issue">
+    <h2>About the Issue</h2>
+    <p>Bullying impacts millions worldwide and takes many forms — physical, emotional, and cyberbullying. It can cause long-lasting harm. Through awareness and education, we aim to stop bullying in all its forms.</p>
+  </section>
+
+  <section id="video">
+    <h2>Our Campaign Video</h2>
+    <iframe src="https://www.youtube.com/embed/NO2ho1pPswU" allowfullscreen></iframe>
+  </section>
+
+  <section id="help">
+    <h2>Help & Resources</h2>
+    <ul>
+      <li><a href="https://www.stopbullying.gov" target="_blank" rel="noopener" class="external-link">StopBullying.gov</a></li>
+      <li><a href="https://www.pacer.org/bullying/" target="_blank" rel="noopener" class="external-link">PACER's National Bullying Prevention Center</a></li>
+      <li><a href="https://www.childline.org.uk/info-advice/bullying-abuse-safety/" target="_blank" rel="noopener" class="external-link">Childline Bullying Advice</a></li>
+    </ul>
+  </section>
+
+  <section id="team">
+    <h2>About the Team</h2>
+    <p>We are a group of passionate students and educators committed to creating a respectful, bully-free community. Our mission is to educate, empower, and support every individual to stand tall with respect for all.</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Stand Tall, Respect for All Campaign. All rights reserved.
+</footer>
+
+<script>
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('main section');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      // Remove active from nav links
+      navLinks.forEach(lnk => lnk.classList.remove('active'));
+      // Add active to clicked
+      link.classList.add('active');
+
+      const targetId = link.getAttribute('data-target');
+
+      // Show the right section with fade animation
+      sections.forEach(section => {
+        if (section.id === targetId) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+
+      // Scroll to top of main content
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
